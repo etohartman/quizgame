@@ -5,6 +5,12 @@
 let questions;
 let questionsIdx;
 let score;
+let playerAnswer;
+let correctAnswer;
+let answers;
+let question;
+
+
 
   /*----- cached elements  -----*/
 
@@ -77,4 +83,3 @@ let score;
         // e.g., document.getElementById('question').innerText = question.question;
         // Loop through question.answers to display them
     }   
-    
