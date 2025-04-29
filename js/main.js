@@ -58,6 +58,7 @@ let question;
                            // click an answer when this is the current question
       },
     ];
+}
     // TODO: Initialize other state variables, e.g.,
     curQuestionIdx = 0;
     ...
