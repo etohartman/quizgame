@@ -23,35 +23,36 @@ let question;
     questions = [
       {
         question: 'Text of question 1',
-        answers: ['Answer 1', 'Answer 2', etc.],
+        answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
         correctAnswer: 1 // index of 'Answer 1'
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
       },
       {
         question: 'Text of question 2',
-        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
+        // Note: Ensure the correctAnswer index matches the answers array
         correctAnswer: 1 // index of 'Another Answer 2'
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
       },
       {
         question: 'Text of question 3',
-        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        answers: ['Another Answer 1', 'Another Answer 2','Another Answer 3', 'Another Answer 4'],
         correctAnswer: 1 // index of 'Another Answer 2'
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
       },
       {
         question: 'Text of question 4',
-        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
         correctAnswer: 1 // index of 'Another Answer 2'
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
       },
       {
         question: 'Text of question 5',
-        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
         correctAnswer: 1 // index of 'Another Answer 2'
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
