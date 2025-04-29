@@ -1,11 +1,10 @@
   /*----- constants -----*/
-const questions;
-const answers;
-const correctAnswer;
-const playerAnswer;
+
 
   /*----- state variables -----*/
-
+let questions;
+let questionsIdx;
+let score;
 
   /*----- cached elements  -----*/
 
@@ -37,4 +36,15 @@ const playerAnswer;
     ...
     ...
     render();  // Always call render after state has been initialized/updated
+  }
+
+  function render() {
+    if (score === null) {
+      renderQuestion();
+      // show the [Next] button
+    } else {
+      // Player has answered all questions
+      // so render the score
+      // Hide the [Next] button
+    }
   }
