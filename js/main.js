@@ -30,6 +30,27 @@ let score;
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
       },
+      {
+        question: 'Text of question 3',
+        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        correctAnswer: 1 // index of 'Another Answer 2'
+        playerAnswer: null // this is the property you update when they
+                           // click an answer when this is the current question
+      },
+      {
+        question: 'Text of question 4',
+        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        correctAnswer: 1 // index of 'Another Answer 2'
+        playerAnswer: null // this is the property you update when they
+                           // click an answer when this is the current question
+      },
+      {
+        question: 'Text of question 5',
+        answers: ['Another Answer 1', 'Another Answer 2', etc.],
+        correctAnswer: 1 // index of 'Another Answer 2'
+        playerAnswer: null // this is the property you update when they
+                           // click an answer when this is the current question
+      },
     ];
     // TODO: Initialize other state variables, e.g.,
     curQuestionIdx = 0;
