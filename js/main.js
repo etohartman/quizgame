@@ -61,11 +61,9 @@ let question;
 }
     // TODO: Initialize other state variables, e.g.,
     curQuestionIdx = 0;
-    ...
-    ...
+  
     render();  // Always call render after state has been initialized/updated
-  }
-
+  
   function render() {
     if (score === null) {
       renderQuestion();
