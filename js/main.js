@@ -69,3 +69,12 @@ let score;
       // Hide the [Next] button
     }
   }
+
+    function renderQuestion() {
+        // Render the current question and its answers
+        const question = questions[questionsIdx];
+        // Update the DOM with the question text and answers
+        // e.g., document.getElementById('question').innerText = question.question;
+        // Loop through question.answers to display them
+    }   
+    
