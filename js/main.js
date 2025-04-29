@@ -1,6 +1,5 @@
   /*----- constants -----*/
 
-
   /*----- state variables -----*/
 let questions;
 let questionsIdx;
@@ -25,7 +24,7 @@ let question;
       {
         question: 'Text of question 1',
         answers: ['Answer 1', 'Answer 2', etc.],
-        correctAnswer: 0 // index of 'Answer 1'
+        correctAnswer: 1 // index of 'Answer 1'
         playerAnswer: null // this is the property you update when they
                            // click an answer when this is the current question
       },
