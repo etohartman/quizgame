@@ -1,5 +1,8 @@
   /*----- constants -----*/
-
+const questions;
+const answers;
+const correctAnswer;
+const playerAnswer;
 
   /*----- state variables -----*/
 
