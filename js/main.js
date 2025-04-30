@@ -1,84 +1,142 @@
-  /*----- constants -----*/
-
-  /*----- state variables -----*/
-let questions;
-let questionsIdx;
-let score;
-let playerAnswer;
-let correctAnswer;
-let answers;
-let question;
+/*-- Pseudocode/Logic I slacked on Saturday 
 
 
+1) Initialize all state, then call render()
+2) render() will render one of the following:
+  2.1) When curQuestionIdx is < questions.length, render the 
+       current question and its list of possible answers
+  2.2) When curQuestionIdx === questions.length, all questions
+       have been answered so render a message based upon
+       the results state, for example:
+       "Congrats - you win by answering 8 out of 10 correctly!"
+3) When a player clicks their answer to a question:
+  3.1) Update the current question object's playerAnswer to the
+       index of the answer.
+  3.2) Call render().  Since an answer has been selected, render their
+       selected answer differently (different styling).
+4) When a player clicks the "Next" button:
+  4.1) Increment curQuestionIdx
+  4.2) If curQuestionIdx === questions.length, all questions have been 
+       answered - so update the results state
+  4.3) Call render()
 
-  /*----- cached elements  -----*/
+--*/
+
+/*----- constants -----*/
+
+/*----- state variables -----*/
+
+// Define, but don't initialize/assign to the state variables
+let questions;  // array of question objects
+let curQuestionIdx;  // index of cur question in the questions array being answered
+let correctScore;
+
+/*----- cached elements  -----*/
+const questionEl = document.getElementById('question');
+const answersEl = document.getElementById('answers');
+const submitBtn = document.getElementById('submit');
+const msgEl = document.getElementById('msg');
 
 
-  /*----- event listeners -----*/
+/*----- event listeners -----*/
+answersEl.addEventListener('click', handleAnswer);
+submitBtn.addEventListener('click', handleSubmit);
 
+/*----- functions -----*/
+init();  // Start the Quiz
 
-  /*----- functions -----*/
-  
-  function init() {
-    questions = [
-      {
-        question: 'Text of question 1',
-        answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
-        correctAnswer: 1, // index of 'Answer 1'
-        playerAnswer: null // this is the property you update when they
-                           // click an answer when this is the current question
-      },
-      {
-        question: 'Text of question 2',
-        answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-        // Note: Ensure the correctAnswer index matches the answers array
-        correctAnswer: 1, // index of 'Another Answer 2'
-        playerAnswer: null // this is the property you update when they
-                           // click an answer when this is the current question
-      },
-      {
-        question: 'Text of question 3',
-        answers: ['Another Answer 1', 'Another Answer 2','Another Answer 3', 'Another Answer 4'],
-        correctAnswer: 1, // index of 'Another Answer 2'
-        playerAnswer: null // this is the property you update when they
-                           // click an answer when this is the current question
-      },
-      {
-        question: 'Text of question 4',
-        answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-        correctAnswer: 1, // index of 'Another Answer 2'
-        playerAnswer: null // this is the property you update when they
-                           // click an answer when this is the current question
-      },
-      {
-        question: 'Text of question 5',
-        answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-        correctAnswer: 1, // index of 'Another Answer 2'
-        playerAnswer: null // this is the property you update when they
-                           // click an answer when this is the current question
-      },
-    ];
+// Initialize all state, then call render()
+function init() {
+  questions = [
+    {
+      question: 'Text of question 1?',
+      answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
+      correctAnswerIdx: 0, // index of 'Answer 1'
+      playerAnswerIdx: null // this is the property you update when they
+      // click an answer when this is the current question
+    },
+    {
+      question: 'Text of question 2?',
+      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
+      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      playerAnswerIdx: null // this is the property you update when they
+      // click an answer when this is the current question
+    },
+    {
+      question: 'Text of question 3?',
+      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
+      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      playerAnswerIdx: null // this is the property you update when they
+      // click an answer when this is the current question
+    },
+    {
+      question: 'Text of question 4?',
+      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
+      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      playerAnswerIdx: null // this is the property you update when they
+      // click an answer when this is the current question
+    },
+    {
+      question: 'Text of question 5?',
+      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
+      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      playerAnswerIdx: null // this is the property you update when they
+      // click an answer when this is the current question
+    },
+  ];
+  curQuestionIdx = 0;
+  correctScore = null;
+  render();
 }
-    // TODO: Initialize other state variables, e.g.,
-    curQuestionIdx = 0;
-  
-    render();  // Always call render after state has been initialized/updated
-  
-  function render() {
-    if (score === null) {
-      renderQuestion();
-      // show the [Next] button
-    } else {
-      // Player has answered all questions
-      // so render the score
-      // Hide the [Next] button
-    }
-  }
 
-    function renderQuestion() {
-        // Render the current question and its answers
-        const question = questions[questionsIdx];
-        // Update the DOM with the question text and answers
-        // e.g., document.getElementById('question').innerText = question.question;
-        // Loop through question.answers to display them
-    }   
+// In response to user interaction, update all impacted state,
+// then call render()
+function handleAnswer(evt) {
+  const answerIdx = parseInt(evt.target.id);
+  questions[curQuestionIdx].playerAnswerIdx = answerIdx;
+  render();
+}
+
+function handleSubmit() {
+  curQuestionIdx++;
+  if (curQuestionIdx === questions.length) {
+    // All questions have been answered
+    // therefore compute the correctScore
+    correctScore = 0;
+    questions.forEach((question) => {
+      if (question.correctAnswerIdx === question.playerAnswerIdx) correctScore++;
+    });
+  }
+  render();
+}
+
+function render() {
+  if (correctScore === null) {
+    // Answering a question
+    renderQuestion();
+    msgEl.innerText = "Click Your Answer and Submit!";
+  } else {
+    // Rendering the score
+    msgEl.innerText = `You Scored ${correctScore} out of ${questions.length} correctly!`;
+
+  }
+  questionEl.style.visibility = correctScore === null ? 'visible' : 'hidden';
+  answersEl.style.visibility = correctScore === null ? 'visible' : 'hidden';
+  submitBtn.style.visibility = correctScore === null ? 'visible' : 'hidden';
+}
+
+function renderQuestion() {
+  const question = questions[curQuestionIdx];
+  questionEl.innerText = question.question;
+  // "Build" the html string using the answers array
+  let html = '';
+  question.answers.forEach((answer, idx) => {
+    html += `<article id="${idx}">(${idx + 1}) ${answer}</article>`;
+  });
+  answersEl.innerHTML = html;
+  const answerEls = document.querySelectorAll('#answers > article');
+  answerEls.forEach((answerEl, idx) => {
+    console.log(idx, question.playerAnswerIdx)
+    answerEl.style.backgroundColor = idx === question.playerAnswerIdx ? 'yellow' : 'white';
+  });
+}
