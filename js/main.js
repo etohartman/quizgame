@@ -49,37 +49,37 @@ init();  // Start the Quiz
 function init() {
   questions = [
     {
-      question: 'Text of question 1?',
-      answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'],
+      question: 'What is the capital of Austrailia?',
+      answers: ['Canberra', 'Sydney', 'Melbourne', 'Brisbane'],
       correctAnswerIdx: 0, // index of 'Answer 1'
       playerAnswerIdx: null // this is the property you update when they
       // click an answer when this is the current question
     },
     {
-      question: 'Text of question 2?',
-      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      question: 'What is the largest country by area in the world?',
+      answers: ['China', 'Russia', 'India', 'Africa'],
+      correctAnswerIdx: 1, // index of 'Another Answer 2'
       playerAnswerIdx: null // this is the property you update when they
       // click an answer when this is the current question
     },
     {
-      question: 'Text of question 3?',
-      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      question: 'Which river is the longest in the world?',
+      answers: ['Russian River', 'Amazon', 'Nile', 'Rio Grande '],
+      correctAnswerIdx: 2, // index of 'Another Answer 2'
       playerAnswerIdx: null // this is the property you update when they
       // click an answer when this is the current question
     },
     {
-      question: 'Text of question 4?',
-      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      question: 'What is the highest mountain in the world?',
+      answers: ['Mount Rainier', 'Mount Hubbard', 'Mount Kilimanjaro', 'Mount Everest'],
+      correctAnswerIdx: 3, // index of 'Another Answer 2'
       playerAnswerIdx: null // this is the property you update when they
       // click an answer when this is the current question
     },
     {
-      question: 'Text of question 5?',
-      answers: ['Another Answer 1', 'Another Answer 2', 'Another Answer 3', 'Another Answer 4'],
-      correctAnswerIdx: 0, // index of 'Another Answer 2'
+      question: 'What is the smallest country in the world by area?',
+      answers: ['Monaco', 'Vatican City', 'San Marino', 'Maldives'],
+      correctAnswerIdx: 1, // index of 'Another Answer 2'
       playerAnswerIdx: null // this is the property you update when they
       // click an answer when this is the current question
     },
