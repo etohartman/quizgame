@@ -1,5 +1,5 @@
 body    {
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -34,8 +34,20 @@ a       {
   color: #3498db;
   text-decoration: none;
 }  
-.answers {
-  background-color: #fff;
-  color: #c78c0c;
-  border: 1px solid #ccc;
+
+main {
+  border: 2px solid rgb(0, 0, 0);
+  border-style: ridge;
+}
+
+// <weight>: Use a value from 300 to 800
+// <uniquifier>: Use a unique and descriptive class name
+
+.open-sans{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
