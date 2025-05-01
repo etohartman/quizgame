@@ -9,11 +9,24 @@ body    {
   align-items: center;
 }
 h1      {
-  color: #333;
+  color: hwb(41 5% 11%);
   text-align: center;
 }
+h2      {
+  color: hwb(41 5% 11%);
+  text-align: center;
+}
+h3      {
+  color: hwb(41 5% 11%);
+  text-align: center;
+}
+h4      {
+  color:hwb(41 5% 11%);
+  text-align: center;
+}
+
 p       {
-  color: #000000;
+  color: #c78c0c;
   line-height: 1.6;
   margin: 20px;
 }
@@ -21,3 +34,8 @@ a       {
   color: #3498db;
   text-decoration: none;
 }  
+.answers {
+  background-color: #fff;
+  color: #c78c0c;
+  border: 1px solid #ccc;
+}
