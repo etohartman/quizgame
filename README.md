@@ -3,8 +3,8 @@ Quiz game, has 5 geography based questions. It is a showcase of my ability to co
 
 # Screenshot
 
-<img src="https://imgur.com/a/8h4hU5t" alt="acreenshot1">
-<img src="https://imgur.com/JpaIcug" alt="acreenshot2">
+<img src="https://i.imgur.com/sKKzSxU.png" alt="screenshot1">
+<img src="https://i.imgur.com/JpaIcug.png" alt="screenshot2">
 
 # Technologies Used
 
